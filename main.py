@@ -1,5 +1,6 @@
 import get_model
 import chat_completions
+import sys,os
 
 # model_lists = get_model.get_model_list()
 # print(model_lists)
@@ -10,4 +11,10 @@ import chat_completions
 
 # content = "给我一条排查 linux 系统端口占用的命令。"
 
-chat_completions.get_completion()
+# sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from utils import ArgumentParser
+
+if __name__ == "__main__":
+    argument_parser = ArgumentParser()
+    args = argument_parser.parse_arguments()
