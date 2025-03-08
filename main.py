@@ -1,6 +1,7 @@
 import utils.get_model as get_model
 import chat_completions
 import sys,os
+from dotenv import load_dotenv
 
 # model_lists = get_model.get_model_list()
 # print(model_lists)
@@ -18,3 +19,8 @@ from utils import ArgumentParser
 if __name__ == "__main__":
     argument_parser = ArgumentParser()
     args = argument_parser.parse_arguments()
+
+    load_dotenv()
+    openai_api_key = os.getenv('CHATGPT_API_KEY')
+
+    model_name = args.openai_model if args.openai_model else "gpt-4o"
