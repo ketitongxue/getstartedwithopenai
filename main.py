@@ -1,4 +1,4 @@
-import get_model
+import utils.get_model as get_model
 import chat_completions
 import sys,os
 
